@@ -72,21 +72,22 @@
     </div>
 
     <div>
-      <label for="">Years of Experience</label>
+      <label for="">Years of Experience</label><br>
+      <label for="">0-1</label>
       <input
         type="radio"
         id="0-1"
         value="0-1"
         v-model="formValues.yearsOfExperience"
       />
-      <label for=""></label>
+      <label for="">2-3</label>
       <input
         type="radio"
         id="2-3"
         value="2-3"
         v-model="formValues.yearsOfExperience"
       />
-      <label for=""></label>
+      <label for="">3-5</label>
       <input
         type="radio"
         id="3-5"

@@ -7,8 +7,8 @@
   <button v-on:click="counted -= 1">decrement</button>
  
   <h1>{{ count }}</h1>
-  <button @click="increment(5, $event)">increment</button>
-  <button @click="decrement(2)">decrement</button>
+  <button @click="increment(5, $event)">increase</button>
+  <button @click="decrement(2)">decrease</button>
   <!-- for multiple method in an element -->
   <button @click="increment(2), changename('clark')">{{ name }}</button>
 </template>

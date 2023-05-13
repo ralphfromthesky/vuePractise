@@ -1,6 +1,10 @@
 <template>
   <template v-for="name in names" :key="name">
-    <h1 v-if="name === 'santolorin'">{{ name }}</h1>
+    <h1 style="color: red" v-if="name === 'santolorin'">{{ name }}</h1>
+    <h1>{{ name }}</h1>
+    <div v-for="emp in employee" :key="emp">
+      <h1 style="color: blue;">{{ emp }}</h1>
+    </div>
   </template>
 </template>
 
@@ -9,6 +13,7 @@ export default {
   data() {
     return {
       names: ["ralph", "rigor", "santolorin"],
+      employee: ["erwin", "tessa", "maine", "daniel"],
     };
   },
 };

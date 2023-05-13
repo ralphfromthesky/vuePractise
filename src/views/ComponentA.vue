@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import ComponentB from "./ComponentB.vue";
 export default {
   components: {

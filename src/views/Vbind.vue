@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       test: 'this is the test',
-      message: "this is test",
+      message: "this is the message",
       number: 89,
       name: "ralph santolorin",
       bindTest: "this is the v-text bind test",
@@ -61,11 +61,12 @@ h2 h3 {
 .testStyle {
   color: red;
   background-color: black;
+
 }
 .condition1 {
-  color: blue;
+  background-color: green;
 }
 .condition2 {
-  color: pink;
+  color: orange;
 }
 </style>

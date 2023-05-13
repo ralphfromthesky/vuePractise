@@ -1,5 +1,5 @@
 <template>
-  <h1>my complete name is {{ firstName }} {{ lastName }}</h1>
+  <h1>my complete name is - {{ firstName }} {{ lastName }} -</h1>
   <h1>my complete name is from computed {{ fullName }}</h1>
   <h1>my complete name is from method {{ thisFullName() }}</h1>
   <h1>the total is {{ total }}</h1>
@@ -34,6 +34,11 @@ export default {
           id: 3,
           items: "ball",
           price: 300,
+        },
+        {
+          id: 4,
+          items: "ring",
+          price: 400,
         },
       ],
     };

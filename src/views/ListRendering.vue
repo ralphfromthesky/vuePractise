@@ -1,5 +1,6 @@
 <template>
   <h3 v-for="name in names" :key="name">{{ name }}</h3>
+
   <h4 v-for="(name, index) in names" :key="name">{{ index }} {{ name }}</h4>
   <h4
     v-for="name in fullNames"
@@ -10,8 +11,8 @@
   </h4>
 
   <div v-for="student in students" :key="student.name">
-    <h3>{{ student.name }}</h3>
-    <h3 v-for="subject in student.subjects" :key="subject">{{ subject }}</h3>
+    <h3>{{ student.name }} </h3>
+    <h3 v-for="subject in student.subjects" :key="subject"> {{ subject }}</h3>
   </div>
   <h1 v-for="(value, index, key) in myInfo" :key="value">{{ key }} {{ index }} {{ value }}</h1>
 </template>
@@ -22,9 +23,9 @@ export default {
     return {
       names: ["ralph", "shenron", "gadwin"],
       fullNames: [
-        { firstName: "ralph", lastName: "santolorin" },
-        { firstName: "shenron", lastName: "santolorin" },
-        { firstName: "gadwin", lastName: "santolorin" },
+        { firstName: "ralph ", lastName: "santolorin" },
+        { firstName: "shenron ", lastName: "santolorin" },
+        { firstName: "gadwin ", lastName: "santolorin" },
       ],
       dataPropertyStyle: {
         color: "red",

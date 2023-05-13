@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>this is the pop up</h1>
+    <h1>this is the pop up by ralph santolorin</h1>
     <button type="button" class="btn btn-success" @click="$emit('close')">Close</button>
   </div>
 </template>

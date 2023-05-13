@@ -22,11 +22,16 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/components">Components</RouterLink>
         <RouterLink to="/primeVue">PrimeVue</RouterLink>
         <RouterLink to="/http">HttpGetRequest</RouterLink>
-        <RouterLink to="/https">Http</RouterLink>
+        <RouterLink to="/https">Http</RouterLink> 
+        <RouterLink to="/PropsAndCompositionAPiI">PropsAndCompositionAPiI</RouterLink>
+        <RouterLink to="/props">Props</RouterLink>
+
+
 
       </nav>
     </div>
   </header>
+  <Sidebar/>
   <h1 v-show="showPopup">{{ test }}</h1>
   <h1>{{ name }}</h1>
   <!-- need to put inside a div to take efferct the v-show <template><div></div></template> -->
@@ -63,10 +68,14 @@ import { RouterLink, RouterView } from "vue-router";
   <hr>
   <UsingVmodelAndCompositionAPI/>
   <hr>
+  <header/>
+  <Samplefunctions/>
   <RouterView />
 </template>
 
 <script>
+import Sidebar from "./views/Sidebar.vue";
+import Samplefunctions from "./views/Samplefunctions.vue";
 import UsingVmodelAndCompositionAPI from './views/UsingVmodelAndCompositionApi.vue';
 import ReplacingDataOptionAPIMethodsWithCompositionApi from "./views/ReplacingDataOptionAPIMethodsWithCompositionApi.vue";
 import ReactivityandtoRefsUsingtoRefs from "./views/ReactivityandtoRefsUsingtoRefs.vue";
@@ -78,6 +87,7 @@ import TabB from "./views/TabB.vue";
 import TabC from "./views/TabC.vue";
 import ComponentsEvents from "./views/ComponentsEvents.vue";
 import ComponentA from "./views/ComponentA.vue";
+import PropsAndCompositionAPIParent from './views/PropsAndCompositionAPIParent.vue';
 export default {
   name: "main-app",
   //this provide is for the usage of inject in the childs component (ComponentC) to render data
@@ -104,7 +114,10 @@ export default {
     ReactivityandtoRefs,
     ReactivityandtoRefsUsingtoRefs,
     ReplacingDataOptionAPIMethodsWithCompositionApi,
-    UsingVmodelAndCompositionAPI
+    UsingVmodelAndCompositionAPI,
+    Samplefunctions,
+    Sidebar,
+    PropsAndCompositionAPIParent,
   },
 };
 </script>
@@ -163,4 +176,6 @@ nav a:first-of-type {
     padding: 1rem 0;
   }
 }
+
+
 </style>

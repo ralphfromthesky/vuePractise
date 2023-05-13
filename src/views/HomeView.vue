@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
   <main>
     <TheWelcome />
+    <h1>ralph santolorin</h1>
   </main>
 </template>

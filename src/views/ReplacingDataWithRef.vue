@@ -1,5 +1,5 @@
 <template>
-    <h1 style="color: red">Replacing Data With Ref</h1>
+  <h1 style="color: red">Replacing Data With Ref</h1>
   <h1>option api - {{ firstname }}</h1>
   <h1>composition api - {{ _firstName }}</h1>
   <h1>composition api {{ greet }}</h1>
@@ -12,6 +12,7 @@
     {{ state.lastname }}
   </h1>
   <h1>this is reactive {{ reactiveGreet }}</h1>
+  <h1>this is the {{ samplegreet }} using setup</h1>
 </template>
 
 <script>
@@ -37,7 +38,8 @@ export default {
     });
 
     const reactiveGreet = `hello how are you ${state.firstname} ${state.secondName}   ${state.lastname}`;
-
+    const samplegreet = `this is sample greet ${c_fullname.value} and ${b_fullname.value}`;
+    
     return {
       _firstName,
       greet,
@@ -47,6 +49,7 @@ export default {
       c_fullname,
       reactiveGreet,
       state,
+      samplegreet
     };
   },
   data() {

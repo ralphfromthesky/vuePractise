@@ -13,6 +13,9 @@ import Component from '../views/Components.vue';
 import PrimeVue from '../views/PrimeVue.vue';
 import HttpGetRequest from '../http/HttpGetRequest.vue'
 import Http from '../http/Http.vue'
+import PropsAndCompositionAPIParent from '../views/PropsAndCompositionAPIParent.vue';
+import PropsParent from '../views/PropsParent.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -95,8 +98,19 @@ const router = createRouter({
       name: 'https',
       component:  Http
     },
+    {
+      path: '/PropsAndCompositionAPiI',
+      name: 'propscompAPI',
+      component:  PropsAndCompositionAPIParent
+    },
+    {
+      path: '/props',
+      name: 'props',
+      component:  PropsParent
+    },
+    
   ]
 })
 
 export default router
-ListRendering
+ListRendering 
