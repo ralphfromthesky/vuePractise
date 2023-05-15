@@ -22,24 +22,24 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/components">Components</RouterLink>
         <RouterLink to="/primeVue">PrimeVue</RouterLink>
         <RouterLink to="/http">HttpGetRequest</RouterLink>
-        <RouterLink to="/https">Http</RouterLink> 
-        <RouterLink to="/PropsAndCompositionAPiI">PropsAndCompositionAPiI</RouterLink>
+        <RouterLink to="/https">Http</RouterLink>
+        <RouterLink to="/PropsAndCompositionAPiI"
+          >PropsAndCompositionAPiI</RouterLink
+        >
         <RouterLink to="/props">Props</RouterLink>
-
+        <RouterLink to="/provideInject">Provid and Inject</RouterLink> 
+        <RouterLink to="/ReplacingDataWithRef">ReplacingDataWithRef</RouterLink> 
+        <RouterLink to="/ComponentsEventsParents">ComponentsEventsParents</RouterLink> 
 
 
       </nav>
     </div>
   </header>
-  <Sidebar/>
+  <Sidebar />
   <h1 v-show="showPopup">{{ test }}</h1>
   <h1>{{ name }}</h1>
   <!-- need to put inside a div to take efferct the v-show <template><div></div></template> -->
-  <ComponentA v-show="showPopup" />
-  <button @click="showPopup = true" type="button" class="btn btn-danger">
-    Pop-up
-  </button>
-  <ComponentsEvents v-show="showPopup" @close="showPopup = false" />
+
   <hr />
   <div style="border: 2px solid black">
     <button @click="activeTab = 'TabA'">TAB A</button>
@@ -56,27 +56,27 @@ import { RouterLink, RouterView } from "vue-router";
 <TabC v-if="activeTab === 'TabC'"/> -->
   </div>
   <hr />
-  <ReusabilityWithMixinsVue/>
-  <hr>
-  <ReplacingDataWithRef/>
-  <hr>
-  <ReactivityandtoRefs/>
-  <hr>
-  <ReactivityandtoRefsUsingtoRefs/>
-  <hr>
-  <ReplacingDataOptionAPIMethodsWithCompositionApi/>
-  <hr>
-  <UsingVmodelAndCompositionAPI/>
-  <hr>
-  <header/>
-  <Samplefunctions/>
+  <ReusabilityWithMixinsVue />
+  <hr />
+  <hr />
+  <ReactivityandtoRefs />
+  <hr />
+  <ReactivityandtoRefsUsingtoRefs />
+  <hr />
+  <ReplacingDataOptionAPIMethodsWithCompositionApi />
+  <hr />
+  <UsingVmodelAndCompositionAPI />
+  <hr />
+  <header />
+  <Samplefunctions />
   <RouterView />
 </template>
 
 <script>
+import ComponentsEventsParents from "./views/ComponentsEventsParents.vue";
 import Sidebar from "./views/Sidebar.vue";
 import Samplefunctions from "./views/Samplefunctions.vue";
-import UsingVmodelAndCompositionAPI from './views/UsingVmodelAndCompositionApi.vue';
+import UsingVmodelAndCompositionAPI from "./views/UsingVmodelAndCompositionApi.vue";
 import ReplacingDataOptionAPIMethodsWithCompositionApi from "./views/ReplacingDataOptionAPIMethodsWithCompositionApi.vue";
 import ReactivityandtoRefsUsingtoRefs from "./views/ReactivityandtoRefsUsingtoRefs.vue";
 import ReactivityandtoRefs from "./views/ReactivityandtoRefs.vue";
@@ -85,21 +85,20 @@ import ReusabilityWithMixinsVue from "./views/ReusabilityWithMixins.vue";
 import TabA from "./views/TabA.vue";
 import TabB from "./views/TabB.vue";
 import TabC from "./views/TabC.vue";
-import ComponentsEvents from "./views/ComponentsEvents.vue";
+import ComponentsEvents from "./views/ComponentsEventsChild.vue";
 import ComponentA from "./views/ComponentA.vue";
-import PropsAndCompositionAPIParent from './views/PropsAndCompositionAPIParent.vue';
+import PropsAndCompositionAPIParent from "./views/PropsAndCompositionAPIParent.vue";
 export default {
   name: "main-app",
   //this provide is for the usage of inject in the childs component (ComponentC) to render data
   provide: {
-    username: "ralph santolorin",
-    anotherUsername: "gadwin santolorin",
+    username: " JASON",
+    sampleName: 'EDWIN'
   },
   data() {
     return {
       test: "this is test",
       name: "shenron",
-      showPopup: false,
       activeTab: "TaBA",
     };
   },
@@ -176,6 +175,4 @@ nav a:first-of-type {
     padding: 1rem 0;
   }
 }
-
-
 </style>

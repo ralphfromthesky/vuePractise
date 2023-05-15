@@ -1,7 +1,8 @@
 <template>
     <div>
         <!-- call the 'name' or interpolate the 'name' here -->
-        hello my name is {{ name }} at {{ message }}
+        hello my name is {{ name }} at {{ message }} {{ number }}
+        
     </div>
 </template>
 
@@ -9,7 +10,7 @@
     export default {
         name: 'propsChild',
         // define the 'name' here
-        props: ['name', 'message', ]
+        props: ['name', 'message', 'number']
     }
 </script>
 

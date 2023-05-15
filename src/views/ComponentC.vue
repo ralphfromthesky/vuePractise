@@ -5,10 +5,9 @@
 
   <h1>
     this is the anotherUsername using provide and injec, this is form ComponentC
-    {{ anotherUsername }} <button class="btn btn-primary"> submit</button> <Button label="Danger" severity="danger" />PRIME
-
+    {{ anotherUsername }}
   </h1>
-  <p>this button is from ComponentC</p>
+  <button class="btn btn-primary"> component C</button> 
 </template>
 
 <script>

@@ -15,7 +15,9 @@ import HttpGetRequest from '../http/HttpGetRequest.vue'
 import Http from '../http/Http.vue'
 import PropsAndCompositionAPIParent from '../views/PropsAndCompositionAPIParent.vue';
 import PropsParent from '../views/PropsParent.vue'
-
+import ComponentA from '../views/ComponentA.vue'
+import ReplacingDataWithRef from '../views/ReplacingDataWithRef.vue'
+import ComponentsEventsParents from '../views/ComponentsEventsParents.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -66,49 +68,63 @@ const router = createRouter({
     {
       path: '/form',
       name: 'FormHandling',
-      component: FormHandling 
+      component: FormHandling
     },
     {
       path: '/computed',
       name: 'ComputedProperties',
-      component:  ComputedProperties
+      component: ComputedProperties
     },
     {
       path: '/watchers',
       name: 'watchers',
-      component:  Wathchers
+      component: Wathchers
     },
     {
       path: '/components',
       name: 'component',
-      component:  Component
+      component: Component
     },
     {
       path: '/primeVue',
       name: 'PrimeVue',
-      component:  PrimeVue
+      component: PrimeVue
     },
     {
       path: '/http',
       name: 'http',
-      component:  HttpGetRequest
+      component: HttpGetRequest
     },
     {
       path: '/https',
       name: 'https',
-      component:  Http
+      component: Http
     },
     {
       path: '/PropsAndCompositionAPiI',
       name: 'propscompAPI',
-      component:  PropsAndCompositionAPIParent
+      component: PropsAndCompositionAPIParent
     },
     {
       path: '/props',
       name: 'props',
-      component:  PropsParent
+      component: PropsParent
+    }, {
+      path: '/provideInject',
+      name: 'provideinject',
+      component: ComponentA
     },
-    
+    {
+      path: '/ReplacingDataWithRef',
+      name: 'ReplacingDataWithRef',
+      component: ReplacingDataWithRef 
+    },
+    {
+      path: '/ComponentsEventsParents',
+      name: 'ComponentsEventsParents',
+      component: ComponentsEventsParents
+    },
+
   ]
 })
 
