@@ -12,7 +12,7 @@
 import axios from "axios";
 export default {
   name: "http",
-  // lifecycel hooks load data form server
+  // lifecycel hooks load data form server when component is initialize
   created() {
     this.getPosts();
   },
@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     getPosts() {
+      // need to install before you can use(npm install axios)
       axios
         .get("https://jsonplaceholder.typicode.com/posts")
         .then((response) => {

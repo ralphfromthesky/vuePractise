@@ -27,6 +27,7 @@ export default {
     const a_fullname = ref("dani jensen");
     const b_fullname = ref("tyler smith");
     const c_fullname = ref("miya khalifa");
+    //for update the value of_firstName
     _firstName.value = "gogo";
     const greet = `hello ${_firstName.value}`;
     const greeted = `hello to all of you ${a_fullname.value}, ${b_fullname.value} and ${c_fullname.value}`;
@@ -37,7 +38,7 @@ export default {
       lastname: "smith",
     });
 
-    const reactiveGreet = `hello how are you ${state.firstname} ${state.secondName}   ${state.lastname}`;
+    const reactiveGreet = `hello how are you ${state.firstname} ${state.secondName} ${state.lastname}`;
     const samplegreet = `this is sample greet ${c_fullname.value} and ${b_fullname.value}`;
     
     return {

@@ -11,17 +11,17 @@
 import {ref} from 'vue'
 export default {
   name: "pop-up",
-  emits: {
+  // emits: {
     //simple validation for emits
-    close: (name) => {
-      if(!name) {
-        return false;
-      } else {
-        return true;
-      }
-    }
-  },
-  // emits: ['close'],
+  //   close: (name) => {
+  //     if(!name) {
+  //       return false;
+  //     } else {
+  //       return true;
+  //     }
+  //   }
+  // },
+  emits: ['close'],
   setup () {
     const name = ref('');
 

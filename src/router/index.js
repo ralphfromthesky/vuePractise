@@ -18,6 +18,10 @@ import PropsParent from '../views/PropsParent.vue'
 import ComponentA from '../views/ComponentA.vue'
 import ReplacingDataWithRef from '../views/ReplacingDataWithRef.vue'
 import ComponentsEventsParents from '../views/ComponentsEventsParents.vue'
+import SlotsParent from '../views/SlotsParent.vue';
+import Animations from '../views/Animations.vue'
+import sampleComputed from '../views/sampleComputed.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -122,11 +126,29 @@ const router = createRouter({
     {
       path: '/ComponentsEventsParents',
       name: 'ComponentsEventsParents',
-      component: ComponentsEventsParents
+      component: ComponentsEventsParents 
     },
+    {
+      path: '/SlotsParent',
+      name: 'SlotsParent',
+      component:  SlotsParent
+    },
+    {
+      path: '/animation',
+      name: 'animationsliding',
+      component:  Animations
+    },
+    {
+      path: '/computed',
+      name: 'computedPropery',
+      component: sampleComputed
+    },
+
+
+
 
   ]
 })
 
-export default router
+export default router 
 ListRendering 

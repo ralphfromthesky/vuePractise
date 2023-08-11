@@ -11,6 +11,7 @@ export default {
   provide: {
     username: "ralph santolorin",
     anotherUsername: "gadwin santolorin",
+    myName: "shenron santolorin"
   },
   components: {
     ComponentB,

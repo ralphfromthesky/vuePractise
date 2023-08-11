@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="popUp = true">PopUP</button>
-    <ComponentsEventsChild v-show="popUp" @close="popUpwithNameInConsole" />
+    <button @click="popUp = !popUp">PopUP</button>
+    <ComponentsEventsChild v-show="popUp" @close="closingChildEvents" />
   </div>
 </template>
 
@@ -20,10 +20,15 @@ export default {
       popUp.value = false;
       console.log("name", name);
     };
+    // you can close the button component event with plain function
+    const closingChildEvents = () => {
+      popUp.value = false;
+    };
 
     return {
       popUp,
       popUpwithNameInConsole,
+      closingChildEvents,
     };
   },
 };

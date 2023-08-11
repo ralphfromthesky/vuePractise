@@ -30,12 +30,17 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/provideInject">Provid and Inject</RouterLink> 
         <RouterLink to="/ReplacingDataWithRef">ReplacingDataWithRef</RouterLink> 
         <RouterLink to="/ComponentsEventsParents">ComponentsEventsParents</RouterLink> 
+        <RouterLink to="/SlotsParent">Slots</RouterLink> 
+        <RouterLink to="/animation">animation</RouterLink> 
+        <RouterLink to="/computed">samples Computed property</RouterLink> 
+
 
 
       </nav>
     </div>
   </header>
-  <Sidebar />
+  
+  <Toggle/>
   <h1 v-show="showPopup">{{ test }}</h1>
   <h1>{{ name }}</h1>
   <!-- need to put inside a div to take efferct the v-show <template><div></div></template> -->
@@ -70,11 +75,12 @@ import { RouterLink, RouterView } from "vue-router";
   <header />
   <Samplefunctions />
   <RouterView />
+  <sampleComputed/>
 </template>
 
 <script>
 import ComponentsEventsParents from "./views/ComponentsEventsParents.vue";
-import Sidebar from "./views/Sidebar.vue";
+import Toggle from "./views/Toggle.vue";
 import Samplefunctions from "./views/Samplefunctions.vue";
 import UsingVmodelAndCompositionAPI from "./views/UsingVmodelAndCompositionApi.vue";
 import ReplacingDataOptionAPIMethodsWithCompositionApi from "./views/ReplacingDataOptionAPIMethodsWithCompositionApi.vue";
@@ -88,6 +94,8 @@ import TabC from "./views/TabC.vue";
 import ComponentsEvents from "./views/ComponentsEventsChild.vue";
 import ComponentA from "./views/ComponentA.vue";
 import PropsAndCompositionAPIParent from "./views/PropsAndCompositionAPIParent.vue";
+import SlotsParentVue from './views/SlotsParent.vue';
+import sampleComputed from './views/sampleComputed.vue';
 export default {
   name: "main-app",
   //this provide is for the usage of inject in the childs component (ComponentC) to render data
@@ -115,8 +123,9 @@ export default {
     ReplacingDataOptionAPIMethodsWithCompositionApi,
     UsingVmodelAndCompositionAPI,
     Samplefunctions,
-    Sidebar,
+    Toggle,
     PropsAndCompositionAPIParent,
+    sampleComputed
   },
 };
 </script>

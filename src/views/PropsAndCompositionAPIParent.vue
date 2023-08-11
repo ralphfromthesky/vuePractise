@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <input type="text" placeholder="name" v-model="firstname" />
-    <input type="text" placeholder="lastname" v-model="lastname" />
-  </div>
-  <PropsAndCompositionAPIChild :firstname="firstname" :lastname="lastname"/>
+<div>
+  <PropsAndCompositionAPIChild :unangPangalan="unangPangalan" :hulingPangalan="hulingPangalan" :santolorin="santolorin" :ralph="ralph"/>
+</div>
 </template>
 
 <script>
@@ -15,16 +13,20 @@ export default {
     PropsAndCompositionAPIChild
   },
   setup() {
-    const firstname = ref("");
-    const lastname = ref("");
+    const unangPangalan = ref("bentong");
+    const hulingPangalan = ref("at apelyido ko ay santolorin");
+    const ralph = ref('im ralph')
+    const santolorin = ref('im santolorin')
 
     return {
-      firstname,
-      lastname,
+      unangPangalan,
+      hulingPangalan,
+      santolorin,
+      ralph
     };
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped> 
 </style>

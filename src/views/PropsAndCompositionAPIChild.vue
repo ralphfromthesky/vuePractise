@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1> hello this is the {{ fullname }}</h1>
+    <h1>sample computed property {{ sample }}</h1>
   </div>
 </template>
 
@@ -8,14 +9,19 @@
 import { computed } from "vue";
 export default {
   name: "PropsAndCompositionAPIchild",
-  props: ["firstname", "lastname"],
+  props: ["unangPangalan", "hulingPangalan", "santolorin", "ralph"],
   setup(props) {
     const fullname = computed(() => {
-      return `${props.firstname} ${props.lastname}`;
+      return `${props.unangPangalan} ${props.hulingPangalan}`;
     });
+
+    const sample = computed(() => {
+      return `${props.santolorin}  ${props.ralph}` 
+    })
 
     return {
         fullname,
+        sample
     }
   },
  
