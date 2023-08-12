@@ -3,7 +3,7 @@
     <h1>this is the pop up </h1>
     <!-- the $emits accept two parameters, the event and additional data that can pass along the event -->
     <input type="text" v-model="name">
-    <button type="button" class="btn btn-success" @click="$emit('close', name)">Close</button>
+    <button type="button" class="btn btn-success" @click="$emit('tae', name)">Close</button>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   //     }
   //   }
   // },
-  emits: ['close'],
+  emits: ['tae'],
   setup () {
     const name = ref('');
 

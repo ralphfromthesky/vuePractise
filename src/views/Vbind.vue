@@ -33,10 +33,13 @@
     this is data property styling array styling
   </h2>
   <h1 :class="['firstClass, secondClass']">this is combined class</h1>
-  <h1 :class="{ trueClass: objectClass, notTrueClass: !objectClass }" @click="objectClass = !objectClass">
+  <h1 :class="{ 'trueClass': objectClass, 'notTrueClass': !objectClass }" @click="objectClass = !objectClass">
     ralph santolorin
   </h1>
   <h1 :class="'trueClass'">sHENRON SANTOLORIN</h1>
+  <h1 :class="'textColor'"> c shenron ay makulit</h1>
+  <h1 :class="ternaryCondition ? 'applyThisIfTrue' : 'applyThisIfFalse'">this is ternary Condition</h1>
+  <h1 :class="{'trueClass': objectClass, 'applyThisIfTrue': !isDisabled}"> dynamic class condition</h1>
 </div>
 </template>
 
@@ -51,7 +54,7 @@ export default {
       bindTest: "this is the v-text bind test",
       thisHtml: "<b>this is bold</b>",
       thisVbind: "this is v-bind",
-      isDisabled: true,
+      isDisabled: false,
       status: "success",
       isTestStyle: true,
       isCondition: false,
@@ -65,6 +68,7 @@ export default {
         fontSize: "2rem",
         backgroundColor: "green",
       },
+      ternaryCondition: false,
       methods: {
         
       }
@@ -99,5 +103,15 @@ h2 h3 {
 }
 .notTrueClass {
   background-color: violet;
+}
+.textColor {
+  color: red;
+  border: 2px solid red;
+}
+.applyThisIfTrue {
+  background-color: red;
+}
+.applyThisIfFalse {
+  background-color: blue;
 }
 </style>

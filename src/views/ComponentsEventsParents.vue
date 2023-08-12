@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="popUp = !popUp">PopUP</button>
-    <ComponentsEventsChild v-show="popUp" @close="closingChildEvents" />
+    <ComponentsEventsChild v-show="popUp" @tae="closingChildEvents" />
   </div>
 </template>
 

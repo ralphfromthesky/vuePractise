@@ -14,6 +14,7 @@
     <h1>this is props validation</h1>
     <!-- the id="myArticle" is the non-props attribute that will be passed from component itself to it element -->
     <PropsAndValidation id="myArticle" title="this is String titlle" :likes="55" :ishonest="false"/>
+    <h1>this is my name {{ name }}</h1>
   </div>
 </template>
 
@@ -35,12 +36,14 @@ export default {
     const mymessage = ref("MESSAGE OF PEDRO");
     const mynumber = ref("09617587967")
     const thisIsSample = ref('sampleLang')
+    const name = ref('ralph')
 
     return {
       myname,
       mymessage,
       mynumber,
-      thisIsSample
+      thisIsSample,
+      name
     };
   },
 };
