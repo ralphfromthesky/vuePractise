@@ -15,12 +15,13 @@ import HttpGetRequest from '../http/HttpGetRequest.vue'
 import Http from '../http/Http.vue'
 import PropsAndCompositionAPIParent from '../views/PropsAndCompositionAPIParent.vue';
 import PropsParent from '../views/PropsParent.vue'
-import ComponentA from '../views/ComponentA.vue'
+import ProvideAndInjectA from '../views/ProvideAndInjectA.vue'
 import ReplacingDataWithRef from '../views/ReplacingDataWithRef.vue'
 import ComponentsEventsParents from '../views/ComponentsEventsParents.vue'
 import SlotsParent from '../views/SlotsParent.vue';
 import Animations from '../views/Animations.vue'
 import sampleComputed from '../views/sampleComputed.vue'
+import ReusabilityWithMixins from '../views/ReusabilityWithMixins.vue'
 
 
 const router = createRouter({
@@ -116,7 +117,7 @@ const router = createRouter({
     }, {
       path: '/provideInject',
       name: 'provideinject',
-      component: ComponentA
+      component: ProvideAndInjectA
     },
     {
       path: '/ReplacingDataWithRef',
@@ -142,6 +143,11 @@ const router = createRouter({
       path: '/computed',
       name: 'computedPropery',
       component: sampleComputed
+    },
+    {
+      path: '/reuse',
+      name: 'PropReusabilityWithMixinsery',
+      component: ReusabilityWithMixins
     },
 
 

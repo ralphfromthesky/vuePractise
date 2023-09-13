@@ -1,6 +1,8 @@
 <template>
+  <div>
   <button @click="counter">clicked {{ count }} times</button>
   <button @mouseover="hoverCount">hovered {{ hover }} times</button>
+</div>
 </template>
 
 <script>

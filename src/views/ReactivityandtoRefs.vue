@@ -1,6 +1,8 @@
 <template>
+  <div>
     <h1 style="color:red"> Reactivity and to Refs</h1>
   <h1>this is reactivity and toRef - {{ name }}</h1>
+</div>
 </template>
 
 <script>

@@ -1,81 +1,65 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-</script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/todo">v-bind</RouterLink>
-        <RouterLink to="/con">conditional rendering</RouterLink>
-        <RouterLink to="/listrendering">ListRendering</RouterLink>
-        <RouterLink to="/conditionallistRendering"
-          >ConditionalListRendering</RouterLink
-        >
-        <RouterLink to="/method">Method</RouterLink>
-        <RouterLink to="/event">EventHandling</RouterLink>
-        <RouterLink to="/form">FormHandling</RouterLink>
-        <RouterLink to="/computed">ComputedProperties</RouterLink>
-        <RouterLink to="/watchers">Watchers</RouterLink>
-        <RouterLink to="/components">Components</RouterLink>
-        <RouterLink to="/primeVue">PrimeVue</RouterLink>
-        <RouterLink to="/http">HttpGetRequest</RouterLink>
-        <RouterLink to="/https">Http</RouterLink>
-        <RouterLink to="/PropsAndCompositionAPiI"
-          >PropsAndCompositionAPiI</RouterLink
-        >
-        <RouterLink to="/props">Props</RouterLink>
-        <RouterLink to="/provideInject">Provid and Inject</RouterLink> 
-        <RouterLink to="/ReplacingDataWithRef">ReplacingDataWithRef</RouterLink> 
-        <RouterLink to="/ComponentsEventsParents">ComponentsEventsParents</RouterLink> 
-        <RouterLink to="/SlotsParent">Slots</RouterLink> 
-        <RouterLink to="/animation">animation</RouterLink> 
-        <RouterLink to="/computed">samples Computed property</RouterLink> 
+  <div>
+    <header>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/todo">v-bind</RouterLink>
+          <RouterLink to="/con">conditional rendering</RouterLink>
+          <RouterLink to="/listrendering">ListRendering</RouterLink>
+          <RouterLink to="/conditionallistRendering"
+            >ConditionalListRendering</RouterLink
+          >
+          <RouterLink to="/method">Method</RouterLink>
+          <RouterLink to="/event">EventHandling</RouterLink>
+          <RouterLink to="/form">FormHandling</RouterLink>
+          <RouterLink to="/computed">ComputedProperties</RouterLink>
+          <RouterLink to="/watchers">Watchers</RouterLink>
+          <RouterLink to="/components">Components</RouterLink>
+          <RouterLink to="/primeVue">PrimeVue</RouterLink>
+          <RouterLink to="/http">HttpGetRequest</RouterLink>
+          <RouterLink to="/https">Http</RouterLink>
+          <RouterLink to="/PropsAndCompositionAPiI"
+            >PropsAndCompositionAPiI</RouterLink
+          >
+          <RouterLink to="/props">Props</RouterLink>
+          <RouterLink to="/provideInject">Provid and Inject</RouterLink>
+          <RouterLink to="/ReplacingDataWithRef"
+            >ReplacingDataWithRef</RouterLink
+          >
+          <RouterLink to="/ComponentsEventsParents"
+            >ComponentsEventsParents</RouterLink
+          >
+          <RouterLink to="/SlotsParent">Slots</RouterLink>
+          <RouterLink to="/animation">animation</RouterLink>
+          <RouterLink to="/computed">samples Computed property</RouterLink>
+          <RouterLink to="/reuse">Reusability with mixins</RouterLink>
+        </nav>
+      </div>
+    </header>
 
+    <div style="border: 2px solid black">
+      <button @click="activeTab = 'TabA'">TAB A</button>
+      <button @click="activeTab = 'TabB'">TAB B</button>
+      <button @click="activeTab = 'TabC'">TAB C</button>
 
-
-      </nav>
-    </div>
-  </header>
-  
-  <Toggle/>
-  <h1 v-show="showPopup">{{ test }}</h1>
-  <h1>{{ name }}</h1>
-  <!-- need to put inside a div to take efferct the v-show <template><div></div></template> -->
-
-  <hr />
-  <div style="border: 2px solid black">
-    <button @click="activeTab = 'TabA'">TAB A</button>
-    <button @click="activeTab = 'TabB'">TAB B</button>
-    <button @click="activeTab = 'TabC'">TAB C</button>
-
-    <!-- keep-alive tag is for keepin alive the component even you switch diffrent tabs. -->
-    <keep-alive>
-      <component :is="activeTab" />
-    </keep-alive>
-    <!-- or you can use below for tab conditonal
+      <!-- keep-alive tag is for keepin alive the component even you switch diffrent tabs. -->
+      <keep-alive>
+        <component :is="activeTab" />
+      </keep-alive>
+      <!-- or you can use below for tab conditonal
   <TabA v-if="activeTab === 'TabA'"/>
 <TabB v-if="activeTab === 'TabB'"/>
 <TabC v-if="activeTab === 'TabC'"/> -->
+    </div>
+    <hr />
+    <ReusabilityWithMixinsVue />
+    <div class="divOfRouterView">
+    <RouterView />
   </div>
-  <hr />
-  <ReusabilityWithMixinsVue />
-  <hr />
-  <hr />
-  <ReactivityandtoRefs />
-  <hr />
-  <ReactivityandtoRefsUsingtoRefs />
-  <hr />
-  <ReplacingDataOptionAPIMethodsWithCompositionApi />
-  <hr />
-  <UsingVmodelAndCompositionAPI />
-  <hr />
-  <header />
-  <Samplefunctions />
-  <RouterView />
-  <sampleComputed/>
+  </div>
 </template>
 
 <script>
@@ -92,16 +76,16 @@ import TabA from "./views/TabA.vue";
 import TabB from "./views/TabB.vue";
 import TabC from "./views/TabC.vue";
 import ComponentsEvents from "./views/ComponentsEventsChild.vue";
-import ComponentA from "./views/ComponentA.vue";
+import ComponentA from "./views/ProvideAndInjectA.vue";
 import PropsAndCompositionAPIParent from "./views/PropsAndCompositionAPIParent.vue";
-import SlotsParentVue from './views/SlotsParent.vue';
-import sampleComputed from './views/sampleComputed.vue';
+import SlotsParentVue from "./views/SlotsParent.vue";
+import sampleComputed from "./views/sampleComputed.vue";
 export default {
   name: "main-app",
   //this provide is for the usage of inject in the childs component (ComponentC) to render data
   provide: {
     username: " JASON",
-    sampleName: 'EDWIN'
+    sampleName: "EDWIN",
   },
   data() {
     return {
@@ -125,7 +109,7 @@ export default {
     Samplefunctions,
     Toggle,
     PropsAndCompositionAPIParent,
-    sampleComputed
+    sampleComputed,
   },
 };
 </script>
@@ -148,7 +132,9 @@ nav a.router-link-exact-active {
 nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
-
+.divOfRouterView {
+  border: 2px solid red;
+}
 nav a {
   display: inline-block;
   padding: 0 1rem;

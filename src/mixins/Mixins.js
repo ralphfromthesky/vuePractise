@@ -1,4 +1,5 @@
 
+//mixin can across yyour application for function
 // this is the reusable method or function you can call it in any compoonents
 export default {
     name: "mixin",

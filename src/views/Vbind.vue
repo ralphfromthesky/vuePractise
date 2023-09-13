@@ -33,13 +33,15 @@
     this is data property styling array styling
   </h2>
   <h1 :class="['firstClass, secondClass']">this is combined class</h1>
-  <h1 :class="{ 'trueClass': objectClass, 'notTrueClass': !objectClass }" @click="objectClass = !objectClass">
-    ralph santolorin
+  <h1 :class="{ 'trueClass': objectClass, 'notTrueClass': isTestStyle }" @click="objectClass = !objectClass">
+    ralph santolorinnnnn
   </h1>
   <h1 :class="'trueClass'">sHENRON SANTOLORIN</h1>
   <h1 :class="'textColor'"> c shenron ay makulit</h1>
   <h1 :class="ternaryCondition ? 'applyThisIfTrue' : 'applyThisIfFalse'">this is ternary Condition</h1>
   <h1 :class="{'trueClass': objectClass, 'applyThisIfTrue': !isDisabled}"> dynamic class condition</h1>
+  <h1>this is sample of interpolation and the name is {{ namers }}</h1>
+  <h1 :class="ternaryClass ? 'ternaryClass': ' applyThisIfTrue'">example of appying class ternay condition</h1>
 </div>
 </template>
 
@@ -58,7 +60,8 @@ export default {
       status: "success",
       isTestStyle: true,
       isCondition: false,
-      objectClass: false,
+      objectClass: true,
+      ternaryClass: true,
       dataPropertyStyle: {
         color: "red",
         border: "2px solid black",
@@ -69,6 +72,7 @@ export default {
         backgroundColor: "green",
       },
       ternaryCondition: false,
+      namers: 'gadwin santolorin',
       methods: {
         
       }
@@ -102,7 +106,7 @@ h2 h3 {
   background-color: pink;
 }
 .notTrueClass {
-  background-color: violet;
+  border: 5px solid yellowgreen;
 }
 .textColor {
   color: red;
@@ -113,5 +117,10 @@ h2 h3 {
 }
 .applyThisIfFalse {
   background-color: blue;
+}
+.ternaryClass {
+  background-color: yellow;
+  border: 2px solid red;
+  color: blue;
 }
 </style>

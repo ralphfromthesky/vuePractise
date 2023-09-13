@@ -1,10 +1,12 @@
 <template>
-  <h1>Volume Tracker - (0-20)</h1>
-  <small v-if="volume === alertVolume">Danger</small>
-  <h2>the volume is {{ volume }}</h2>
   <div>
-    <button @click="volume += 1">INCREMENT</button>
-    <button @click="volume -= 1">DECREMENT</button>
+    <h1>Volume Tracker - (0-20)</h1>
+    <small v-if="volume === alertVolume">Danger</small>
+    <h2>the volume is {{ volume }}</h2>
+    <div>
+      <button @click="volume += 1">INCREMENT</button>
+      <button @click="volume -= 1">DECREMENT</button>
+    </div>
   </div>
 </template>
 
