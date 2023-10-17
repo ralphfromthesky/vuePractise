@@ -1,32 +1,27 @@
 <template>
   <div>
-    <h1> hello this is the {{ fullname }}</h1>
-    <h1>sample computed property {{ sample }}</h1>
-    <h1>{{ unangPangalan }}</h1>
-    <h1>{{ hulingPangalan }}</h1>
+    <h1>this is props a message comes from parent component App.vue</h1>
+    <h2>{{ messageFromParentComponent }} - {{ AnotherMessage }}</h2>
+    <hr />
+
+    <!-- using provide and inject globally -->
+    <div v-for="data in dataFromAnotherSampleOfData" :key="data"> 
+      <h1>{{ data.name }} - {{ data.age }} - {{ data.location }}</h1>
+    </div>
   </div>
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed, inject } from "vue";
 export default {
   name: "PropsAndCompositionAPIchild",
-  props: ["unangPangalan", "hulingPangalan", "santolorin", "ralph"],
-  setup(props) {
-    const fullname = computed(() => {
-      return `${props.unangPangalan} <--> ${props.hulingPangalan}`;
-    });
-
-    const sample = computed(() => {
-      return `${props.santolorin}  ${props.ralph}` 
-    })
-
+  props: ["messageFromParentComponent", "AnotherMessage"],
+  setup() {
+    const dataFromAnotherSampleOfData = inject("datas");
     return {
-        fullname,
-        sample
-    }
+      dataFromAnotherSampleOfData,
+    };
   },
- 
 };
 </script>
 

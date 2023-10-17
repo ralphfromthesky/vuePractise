@@ -36,6 +36,10 @@
           <RouterLink to="/animation">animation</RouterLink>
           <RouterLink to="/computed">samples Computed property</RouterLink>
           <RouterLink to="/reuse">Reusability with mixins</RouterLink>
+          <RouterLink to="/provideInjectglobally">provideInjectGlobally</RouterLink>
+          <RouterLink to="/provideInjectglobally2">provideInjectGlobally2</RouterLink>
+
+
         </nav>
       </div>
     </header>

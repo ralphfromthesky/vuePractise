@@ -22,7 +22,8 @@ import SlotsParent from '../views/SlotsParent.vue';
 import Animations from '../views/Animations.vue'
 import sampleComputed from '../views/sampleComputed.vue'
 import ReusabilityWithMixins from '../views/ReusabilityWithMixins.vue'
-
+import provideAndInjectUsingGlobalandCompositionApi from '../views/provideAndInjectUsingGlobalandCompositionApi.vue'
+import provideAndInjectUsingGlobalandCompositionApi2 from '../views/provideAndInjectUsingGlobalandCompositionApi2.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -149,6 +150,19 @@ const router = createRouter({
       name: 'PropReusabilityWithMixinsery',
       component: ReusabilityWithMixins
     },
+    {
+      path: '/provideInjectglobally',
+      name: 'provide',
+      component: provideAndInjectUsingGlobalandCompositionApi //provideAndInjectUsingGlobalandCompositionApi2
+    },
+    {
+      path: '/provideInjectglobally2',
+      name: 'provide2',
+      component: provideAndInjectUsingGlobalandCompositionApi2 
+    },
+
+
+
 
 
 

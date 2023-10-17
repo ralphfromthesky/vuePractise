@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, ref } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
@@ -17,12 +17,25 @@ import Password from 'primevue/password';
 import Sidebar from 'primevue/sidebar';
 import Calendar from 'primevue/calendar';
 import TieredMenu from 'primevue/tieredmenu';
+import { dataList } from './dataListSample'
+import { employees} from './employee'
+import {datas} from './anotherSampleOfData'
 
 
 const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.mount('#app')
+
+const sampleDataList = ref(dataList) // for provide and inject data
+app.provide('sampleData', sampleDataList) // this one too provide and inject
+
+const employee = ref(employees)
+app.provide('employee', employee)
+
+const anotherSampleOfData = ref(datas)
+app.provide('datas', anotherSampleOfData)
+
 
 app.use(PrimeVue);
 app.component('Button', Button);

@@ -1,43 +1,86 @@
 <template>
   <div>
     <PropsAndCompositionAPIChild
-      :unangPangalan="unangPangalan"
-      :hulingPangalan="hulingPangalan"
-      :santolorin="santolorin"
-      :ralph="ralph"
+      messageFromParentComponent="this is the message from parent Component"
+      AnotherMessage="ralph santolorin"
     />
-    <button @click="changeMessage()"> change</button>
-    <PropsAndCompositionAPIChild2 :sampleName="sampleName" />
+    <hr />
+
+    <PropsAndCompositionAPIChild2
+      :bindMessageFromParents="MessageFromParentComponent"
+      :anotherSampleOfBindDataFromParentComponent="bindThisData"
+    />
+
+    <PropsAndCompositionAPIChild2
+      :usingComputedPropertiesForFirstName="firstname"
+      :usingComputedPropertiesForlastName="lastname"
+    />
+
+    <PropsAndCompositionAPIChild2 :bindThisfromparents="newMessage"/>
+    <PropsAndCompositionAPIChild2 :dataList2="newData"/>
+
+    <hr />
+    <button @click="changeData()">change data from parent component</button>
+    <hr />
+
+    <PropsAndCompositionAPIChild23 :data="dataList"/>
+
+    <PropsAndCompositionAPIChild23 :messageFromTheSky="messageFromSky"/>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 import PropsAndCompositionAPIChild from "./PropsAndCompositionAPIChild.vue";
 import PropsAndCompositionAPIChild2 from "./PropsAndCompositionAPIChild2.vue";
+import PropsAndCompositionAPIChild23 from "./PropsAndCompositionAPIChild23.vue";
+
 export default {
   name: "propsUsingCompositionApi",
   components: {
     PropsAndCompositionAPIChild,
     PropsAndCompositionAPIChild2,
+    PropsAndCompositionAPIChild23,
   },
   setup() {
-    const unangPangalan = ref("bentong");
-    const hulingPangalan = ref("at apelyido ko ay santolorin");
-    const ralph = ref("im ralph");
-    const santolorin = ref("im santolorin");
-    const sampleName = ref("this is sample props");
+    const MessageFromParentComponent = ref(
+      "a bind message from Parent App.vue"
+    );
+    const newMessage = ref('this is the new messageeeeeee')
+    const bindThisData = ref("new Message");
+    const firstname = ref("ralph rigor");
+    const lastname = ref("santolorin");
+    const messageFromSky = ref('how are you!!!!!')
+    const dataList = reactive({
+      name: 'ralph santolorin',
+      age: '39',
+      location: 'navotas'
+    })
+    const newData = reactive({
+      name: 'shenron santolorin',
+      age: 10,
+      location: 'navotas'
+    })
 
-    const changeMessage = () => {
-      sampleName.value = "chagnge value by clicking";
+
+
+
+    const changeData = () => {
+      firstname.value = "new data from a button click from parent component";
+      lastname.value = "new data from a button click from parent component";
+      bindThisData.value = "new data from a button click from parent component";
     };
+
     return {
-      unangPangalan,
-      hulingPangalan,
-      santolorin,
-      ralph,
-      sampleName,
-      changeMessage,
+      MessageFromParentComponent,
+      bindThisData,
+      firstname,
+      lastname,
+      changeData,
+      dataList,
+      newMessage,
+      messageFromSky,
+      newData
     };
   },
 };
